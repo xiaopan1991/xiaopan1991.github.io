@@ -5,9 +5,61 @@
     <description>关于程序员 | 肖攀 &amp; Mobile Lover，Software Engineer | 这里是 @xiaopan肖攀 的个人博客，与你一起发现更大的世界。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 29 Jan 2018 01:19:48 +0800</pubDate>
-    <lastBuildDate>Mon, 29 Jan 2018 01:19:48 +0800</lastBuildDate>
+    <pubDate>Sat, 24 Feb 2018 11:38:52 +0800</pubDate>
+    <lastBuildDate>Sat, 24 Feb 2018 11:38:52 +0800</lastBuildDate>
     <generator>Jekyll v3.7.2</generator>
+    
+      <item>
+        <title>2018新目标</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;“ KEEP IT UP. ”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;新的一年开始了，今天算是自己开年的第一个工作日吧，年前就已经架好的Blog也该好好的利用起来了…&lt;/p&gt;
+
+&lt;h2 id=&quot;2018年目标&quot;&gt;2018年目标&lt;/h2&gt;
+&lt;p&gt;生活目标:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;结束5年的北漂生活(走前去一次香山)&lt;/li&gt;
+    &lt;li&gt;装修房子，布置自己的小家，开始真正意义上的生活&lt;/li&gt;
+    &lt;li&gt;带老婆多出去走走&lt;/li&gt;
+    &lt;li&gt;熟悉这个陌生的城市—-杭州&lt;/li&gt;
+    &lt;li&gt;找一份满意的工作&lt;/li&gt;
+    &lt;li&gt;颈椎康复训练&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;工作学习目标:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;学习更多的Unity开发技能&lt;/li&gt;
+    &lt;li&gt;积累更多游戏开发工具的制作经验&lt;/li&gt;
+    &lt;li&gt;掌握更多的游戏框架，阅读更多的游戏源码&lt;/li&gt;
+    &lt;li&gt;对虚幻引擎进一步的学习，掌握引擎使用流程并能上手简单游戏&lt;/li&gt;
+    &lt;li&gt;与时俱进，学习python&lt;/li&gt;
+    &lt;li&gt;利用闲暇时间独立开发小游戏&lt;/li&gt;
+    &lt;li&gt;写博客，与大家分享更多游戏开发中的坑与经验&lt;/li&gt;
+    &lt;li&gt;结交更多圈内的朋友&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;2018年是陌生的一年，2018年是目标明确的一年，让我们背上行囊，一起踏上征程，让2018更精彩…&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://xiaopan1991.github.io/img/fight.jpg&quot; alt=&quot;我的头像&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 24 Feb 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/02/24/NewYearNewTarget/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/02/24/NewYearNewTarget/</guid>
+        
+        <category>旅程</category>
+        
+        
+      </item>
     
       <item>
         <title>Hello 2018</title>
