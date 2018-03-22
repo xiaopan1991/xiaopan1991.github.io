@@ -4,7 +4,7 @@ title:      "OpenGL Programming Guide"
 subtitle:   " \"(ID:001) OpenGL 编程环境的配置（Windows10，Vs2017）\""
 date:       2018-03-22
 author:     "xiaopan"
-header-img: "img/OpenGL/001/timg.jpg"
+header-img: "img/post-bg-js-version.jpg"
 catalog: true
 tags:
     - OpenGL 学习笔记
