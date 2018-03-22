@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "OpenGL Programming Guide 001"
-subtitle:   " OpenGL 编程环境的配置（Windows10，Vs2017）
+subtitle:   " OpenGL 编程环境的配置（Windows10，Vs2017）"
 date:       2018-03-22
 author:     "xiaopan"
 header-img: "img/post-bg-js-version.jpg"
