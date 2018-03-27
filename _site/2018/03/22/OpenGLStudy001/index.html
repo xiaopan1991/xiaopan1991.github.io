@@ -10,7 +10,7 @@
     <meta name="keywords"  content="肖攀, XP,@xiaopan, 肖攀的博客, xiaopan Blog, 博客, 个人网站, 互联网,">
     <meta name="theme-color" content="#000000">
     
-    <title>2018新目标 - 肖攀的博客 | xiaopan Blog</title>
+    <title>OpenGL Programming Guide 001 - 肖攀的博客 | xiaopan Blog</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -19,7 +19,7 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/2018/02/24/NewYearNewTarget/">
+    <link rel="canonical" href="http://localhost:4000/2018/03/22/OpenGLStudy001/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -151,13 +151,13 @@
 
     <!-- Image to hack wechat -->
 <!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
-<!-- <img src="/img/post-bg-2015.jpg" width="0" height="0"> -->
+<!-- <img src="/img/post-bg-js-version.jpg" width="0" height="0"> -->
 
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header{
         position: relative;
-        background-image: url('/img/post-bg-2015.jpg')
+        background-image: url('/img/post-bg-js-version.jpg')
     }
 
     
@@ -170,15 +170,15 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/#旅程" title="旅程">旅程</a>
+                        <a class="tag" href="/tags/#OpenGL 学习笔记" title="OpenGL 学习笔记">OpenGL 学习笔记</a>
                         
                     </div>
-                    <h1>2018新目标</h1>
+                    <h1>OpenGL Programming Guide 001</h1>
                     
                     
-                    <h2 class="subheading"> "新的旅途，新的起点"</h2>
+                    <h2 class="subheading"> OpenGL 编程环境的配置（Windows10，Vs2017）</h2>
                     
-                    <span class="meta">Posted by xiaopan on February 24, 2018</span>
+                    <span class="meta">Posted by xiaopan on March 22, 2018</span>
                 </div>
             </div>
         </div>
@@ -200,44 +200,56 @@
                 
 
 				<blockquote>
-  <p>“ KEEP IT UP. ”</p>
+  <h2 id="-talk-is-cheap-show-me-the-code---屁话少说放码过来">“ Talk is cheap， Show me the code.   屁话少说，放码过来”</h2>
 </blockquote>
 
-<p>新的一年开始了，今天算是自己开年的第一个工作日吧，年前就已经架好的Blog也该好好的利用起来了…</p>
+<p>距离上次发文章差不多快一个月的时间了，这一个月中间经历了离职、搬家、离开北京、来杭州安顿、开始装修房子、找工作等等一些事情，有顺心的也有不太顺利的。是时候该静下心来写写东西了。由于这段时间找工作频频会在图形学方面的知识上遭到鄙视，所以打算开始学习一下这方面的知识，就买本书开始学起来了。上初中高中的时候老师就教育我们，好记性不如烂笔头，看书还是得做做笔记，一方面是为了对学过的东西的总结，另一方面也算是为了以后回顾知识作参考，如果可以的话也希望能帮助到一些和我一样在这方面遭到鄙视的小伙伴，废话不多说，开始正题.</p>
 
-<h2 id="2018年目标">2018年目标</h2>
-<p>生活目标:</p>
+<p>我用的是页面最上方的背景图所示的这本书（《OpenGL 编程指南 第9版》），今天刚拿到书主要看了一下第1章：OpenGL概述。</p>
 
-<blockquote>
-  <ul>
-    <li>结束5年的北漂生活(走前去一次香山)</li>
-    <li>装修房子，布置自己的小家，开始真正意义上的生活</li>
-    <li>带老婆多出去走走</li>
-    <li>熟悉这个陌生的城市—-杭州</li>
-    <li>找一份满意的工作</li>
-    <li>颈椎康复训练</li>
-  </ul>
-</blockquote>
+<p>在书的前言里面介绍了本书代码用到的第三方支持库：<a href="http://www.glfw.org//">++GLFW++</a> 和 <a href="https://github.com/skaslev/gl3w/">++GL3W++</a>，以及<a href="https://github.com/openglredbook/examples/">++本书的源代码++</a>, 还有一个重要的工具<a href="https://cmake.org/">CMake</a>（它是用来把GLFW源码库编译成动态库或静态库的），还有就是电脑上要有python环境 。我费了好大的劲，花了差不多小半天的时间才把环境搭起来，也许是我比较愚钝把。</p>
 
-<p>工作学习目标:</p>
+<h2 id="环境搭建的流程和注意事项">环境搭建的流程和注意事项</h2>
 
-<blockquote>
-  <ul>
-    <li>学习更多的Unity开发技能</li>
-    <li>积累更多游戏开发工具的制作经验</li>
-    <li>掌握更多的游戏框架，阅读更多的游戏源码</li>
-    <li>对虚幻引擎进一步的学习，掌握引擎使用流程并能上手简单游戏</li>
-    <li>与时俱进，学习python</li>
-    <li>利用闲暇时间独立开发小游戏</li>
-    <li>写博客，与大家分享更多游戏开发中的坑与经验</li>
-    <li>结交更多圈内的朋友</li>
-  </ul>
-</blockquote>
+<h3 id="1先将上方介绍的两个第三方库工具和源码下载到本地">1.先将上方介绍的两个第三方库、工具和源码下载到本地</h3>
+<h3 id="2对下载好的工具进行处理">2.对下载好的工具进行处理</h3>
+<h4 id="glfw">GLFW：</h4>
+<p>我没有从git上克隆，直接从网站上下载的压缩包：<img src="https://xiaopan1991.github.io/img/OpenGL/001/1_1.png" alt="image" /><br />
+  接下来就是CMake的上场了</p>
 
-<hr />
-<p>2018年是陌生的一年，2018年是目标明确的一年，让我们背上行囊，一起踏上征程，让2018更精彩…</p>
+<h4 id="cmake">CMake：</h4>
+<p>官网 -&gt; Download选项（在页面中找到Binary distributions，从下面找到你电脑对应的版本） -&gt; 下载<br />
+  如图所示<img src="https://xiaopan1991.github.io/img/OpenGL/001/1_2.png" alt="image" /></p>
 
-<p><img src="https://xiaopan1991.github.io/img/fight.jpg" alt="我的头像" /></p>
+<h4 id="生成glfw静态库">生成GLFW静态库</h4>
+<p><img src="https://xiaopan1991.github.io/img/OpenGL/001/1_3.png" alt="image" /><br />
+  经过上图操作后，在D:\glfw-3.2.1\build\src\Debug（这是我的目录）下就会存在一个glfw3.lib的静态链接库。</p>
+
+<h4 id="编译gl3w">编译GL3W</h4>
+<p>打开下载好的GL3W文件夹，双击文件中的gl3w_gen.py脚本（前提是你的电脑上有python环境）。脚本执行成功之后在src文件夹下会多一个gl3w.c的C文件，还会多一个include的文件夹（include/GL/..），里面有两个.h头文件。</p>
+
+<h4 id="本书的源代码">本书的源代码</h4>
+<p><img src="https://xiaopan1991.github.io/img/OpenGL/001/1_4.png" alt="image" /></p>
+
+<p>OK，所有的菜都准备好了，可以开始下锅炒了。</p>
+
+<h3 id="3新建工程">3.新建工程</h3>
+<p>&lt;1&gt; 新建文件夹Libraries\Includes和Libraries\Libs，这个Libraries文件夹放在哪都行，自己记住就可以，可以放在一会要创建的工程内也可以在工程外创建。下面是重要的操作了：<br />
+A.将GLFW的 D:\glfw-3.2.1\include下的GLFW目录拷贝到Includes文件夹下<br />
+B.将GLFW的 D:\glfw-3.2.1\build\src\Debug下的glfw3.lib文件拷贝到Libs文件夹下<br />
+C.将GL3W的 D:\gl3w-master\include下的GL目录拷贝到Includes文件夹下<br />
+D.将GL3W的 D:\gl3w-master\src下的gl3w.c文件拷贝到Libs文件夹下</p>
+
+<p>&lt;2&gt; vs2017中新建一个C++ 空项目<br />
+<img src="https://xiaopan1991.github.io/img/OpenGL/001/1_5.png" alt="image" /></p>
+
+<p>&lt;3&gt; 然后把源码里面的第一章的01-triangles.cpp代码拷贝到刚刚创建的空项目里；这个时候会报很多错误，这是因为代码中有一些引入的文件还没有操作，不要害怕，
+A.把刚刚添加的Libs中的gl3w.c添加到项目的源文件中
+B.把源代码中的LoadShaders.cpp文件添加到Libraries\Libs文件夹中，并且添加到项目的源文件中
+C.把源代码include文件夹下的LoadShaders.h、vgl.h两个文件添加到Libraries\Includes</p>
+
+<p>&lt;4&gt;最后清理一下项目看看是不是就没错了，如果没有错误了就直接运行，见证奇迹的时刻到了，成功了！<br />
+<img src="https://xiaopan1991.github.io/img/OpenGL/001/1_6.png" alt="image" /></p>
 
 
 
@@ -246,17 +258,17 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2018/01/29/hello-2018/" data-toggle="tooltip" data-placement="top" title="Hello 2018">
+                        <a href="/2018/02/26/UnityTimeline/" data-toggle="tooltip" data-placement="top" title="Unity游戏开发---TimeLine">
                         Previous<br>
-                        <span>Hello 2018</span>
+                        <span>Unity游戏开发---TimeLine</span>
                         </a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2018/02/26/UnityArticle0206/" data-toggle="tooltip" data-placement="top" title="Unity游戏开发摘录">
+                        <a href="/2018/03/27/UnityForeach/" data-toggle="tooltip" data-placement="top" title="Unity游戏开发---聊聊在Unity编程中对foreach的偏见">
                         Next<br>
-                        <span>Unity游戏开发摘录</span>
+                        <span>Unity游戏开发---聊聊在Unity编程中对foreach的偏见</span>
                         </a>
                     </li>
                     
@@ -364,8 +376,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "xiaopan-1";
-    var disqus_identifier = "/2018/02/24/NewYearNewTarget";
-    var disqus_url = "http://localhost:4000/2018/02/24/NewYearNewTarget/";
+    var disqus_identifier = "/2018/03/22/OpenGLStudy001";
+    var disqus_url = "http://localhost:4000/2018/03/22/OpenGLStudy001/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

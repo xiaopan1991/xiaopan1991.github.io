@@ -5,9 +5,91 @@
     <description>关于程序员 | 肖攀 &amp; Mobile Lover，Software Engineer | 这里是 @xiaopan肖攀 的个人博客，与你一起发现更大的世界。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 05 Mar 2018 12:08:41 +0800</pubDate>
-    <lastBuildDate>Mon, 05 Mar 2018 12:08:41 +0800</lastBuildDate>
+    <pubDate>Tue, 27 Mar 2018 12:49:47 +0800</pubDate>
+    <lastBuildDate>Tue, 27 Mar 2018 12:49:47 +0800</lastBuildDate>
     <generator>Jekyll v3.7.2</generator>
+    
+      <item>
+        <title>Unity游戏开发---聊聊在Unity编程中对foreach的偏见</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;“ KEEP IT UP. ”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;最近一直在忙着面试，很多面试题都非常基础（大多都可以在网上找到原题）&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 27 Mar 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/03/27/UnityForeach/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/03/27/UnityForeach/</guid>
+        
+        <category>实用技能</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>OpenGL Programming Guide 001</title>
+        <description>&lt;blockquote&gt;
+  &lt;h2 id=&quot;-talk-is-cheap-show-me-the-code---屁话少说放码过来&quot;&gt;“ Talk is cheap， Show me the code.   屁话少说，放码过来”&lt;/h2&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;距离上次发文章差不多快一个月的时间了，这一个月中间经历了离职、搬家、离开北京、来杭州安顿、开始装修房子、找工作等等一些事情，有顺心的也有不太顺利的。是时候该静下心来写写东西了。由于这段时间找工作频频会在图形学方面的知识上遭到鄙视，所以打算开始学习一下这方面的知识，就买本书开始学起来了。上初中高中的时候老师就教育我们，好记性不如烂笔头，看书还是得做做笔记，一方面是为了对学过的东西的总结，另一方面也算是为了以后回顾知识作参考，如果可以的话也希望能帮助到一些和我一样在这方面遭到鄙视的小伙伴，废话不多说，开始正题.&lt;/p&gt;
+
+&lt;p&gt;我用的是页面最上方的背景图所示的这本书（《OpenGL 编程指南 第9版》），今天刚拿到书主要看了一下第1章：OpenGL概述。&lt;/p&gt;
+
+&lt;p&gt;在书的前言里面介绍了本书代码用到的第三方支持库：&lt;a href=&quot;http://www.glfw.org//&quot;&gt;++GLFW++&lt;/a&gt; 和 &lt;a href=&quot;https://github.com/skaslev/gl3w/&quot;&gt;++GL3W++&lt;/a&gt;，以及&lt;a href=&quot;https://github.com/openglredbook/examples/&quot;&gt;++本书的源代码++&lt;/a&gt;, 还有一个重要的工具&lt;a href=&quot;https://cmake.org/&quot;&gt;CMake&lt;/a&gt;（它是用来把GLFW源码库编译成动态库或静态库的），还有就是电脑上要有python环境 。我费了好大的劲，花了差不多小半天的时间才把环境搭起来，也许是我比较愚钝把。&lt;/p&gt;
+
+&lt;h2 id=&quot;环境搭建的流程和注意事项&quot;&gt;环境搭建的流程和注意事项&lt;/h2&gt;
+
+&lt;h3 id=&quot;1先将上方介绍的两个第三方库工具和源码下载到本地&quot;&gt;1.先将上方介绍的两个第三方库、工具和源码下载到本地&lt;/h3&gt;
+&lt;h3 id=&quot;2对下载好的工具进行处理&quot;&gt;2.对下载好的工具进行处理&lt;/h3&gt;
+&lt;h4 id=&quot;glfw&quot;&gt;GLFW：&lt;/h4&gt;
+&lt;p&gt;我没有从git上克隆，直接从网站上下载的压缩包：&lt;img src=&quot;https://xiaopan1991.github.io/img/OpenGL/001/1_1.png&quot; alt=&quot;image&quot; /&gt;&lt;br /&gt;
+  接下来就是CMake的上场了&lt;/p&gt;
+
+&lt;h4 id=&quot;cmake&quot;&gt;CMake：&lt;/h4&gt;
+&lt;p&gt;官网 -&amp;gt; Download选项（在页面中找到Binary distributions，从下面找到你电脑对应的版本） -&amp;gt; 下载&lt;br /&gt;
+  如图所示&lt;img src=&quot;https://xiaopan1991.github.io/img/OpenGL/001/1_2.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;生成glfw静态库&quot;&gt;生成GLFW静态库&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;https://xiaopan1991.github.io/img/OpenGL/001/1_3.png&quot; alt=&quot;image&quot; /&gt;&lt;br /&gt;
+  经过上图操作后，在D:\glfw-3.2.1\build\src\Debug（这是我的目录）下就会存在一个glfw3.lib的静态链接库。&lt;/p&gt;
+
+&lt;h4 id=&quot;编译gl3w&quot;&gt;编译GL3W&lt;/h4&gt;
+&lt;p&gt;打开下载好的GL3W文件夹，双击文件中的gl3w_gen.py脚本（前提是你的电脑上有python环境）。脚本执行成功之后在src文件夹下会多一个gl3w.c的C文件，还会多一个include的文件夹（include/GL/..），里面有两个.h头文件。&lt;/p&gt;
+
+&lt;h4 id=&quot;本书的源代码&quot;&gt;本书的源代码&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;https://xiaopan1991.github.io/img/OpenGL/001/1_4.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;OK，所有的菜都准备好了，可以开始下锅炒了。&lt;/p&gt;
+
+&lt;h3 id=&quot;3新建工程&quot;&gt;3.新建工程&lt;/h3&gt;
+&lt;p&gt;&amp;lt;1&amp;gt; 新建文件夹Libraries\Includes和Libraries\Libs，这个Libraries文件夹放在哪都行，自己记住就可以，可以放在一会要创建的工程内也可以在工程外创建。下面是重要的操作了：&lt;br /&gt;
+A.将GLFW的 D:\glfw-3.2.1\include下的GLFW目录拷贝到Includes文件夹下&lt;br /&gt;
+B.将GLFW的 D:\glfw-3.2.1\build\src\Debug下的glfw3.lib文件拷贝到Libs文件夹下&lt;br /&gt;
+C.将GL3W的 D:\gl3w-master\include下的GL目录拷贝到Includes文件夹下&lt;br /&gt;
+D.将GL3W的 D:\gl3w-master\src下的gl3w.c文件拷贝到Libs文件夹下&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;2&amp;gt; vs2017中新建一个C++ 空项目&lt;br /&gt;
+&lt;img src=&quot;https://xiaopan1991.github.io/img/OpenGL/001/1_5.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;3&amp;gt; 然后把源码里面的第一章的01-triangles.cpp代码拷贝到刚刚创建的空项目里；这个时候会报很多错误，这是因为代码中有一些引入的文件还没有操作，不要害怕，
+A.把刚刚添加的Libs中的gl3w.c添加到项目的源文件中
+B.把源代码中的LoadShaders.cpp文件添加到Libraries\Libs文件夹中，并且添加到项目的源文件中
+C.把源代码include文件夹下的LoadShaders.h、vgl.h两个文件添加到Libraries\Includes&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;4&amp;gt;最后清理一下项目看看是不是就没错了，如果没有错误了就直接运行，见证奇迹的时刻到了，成功了！&lt;br /&gt;
+&lt;img src=&quot;https://xiaopan1991.github.io/img/OpenGL/001/1_6.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 22 Mar 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/03/22/OpenGLStudy001/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/03/22/OpenGLStudy001/</guid>
+        
+        <category>OpenGL 学习笔记</category>
+        
+        
+      </item>
     
       <item>
         <title>Unity游戏开发---TimeLine</title>
@@ -19,8 +101,8 @@
 
 </description>
         <pubDate>Mon, 26 Feb 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2018/02/26/UnitySummary0206/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/02/26/UnitySummary0206/</guid>
+        <link>http://localhost:4000/2018/02/26/UnityTimeline/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/02/26/UnityTimeline/</guid>
         
         <category>实用技能</category>
         
