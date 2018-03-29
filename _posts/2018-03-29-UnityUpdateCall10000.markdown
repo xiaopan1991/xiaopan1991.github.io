@@ -12,7 +12,7 @@ tags:
 
 > “ 继续努力. ”
 
-这篇文章我们来总结一下一个经常被问到的话题，关于Unity中Update的调用。小标题中“N call 1 VS 1 call N”的意思是：N个带有Update的脚本各调用一次还是在一个Update里面调用N次自己写的用于更新的UpdateMe方法。
+这篇文章我们来总结一下一个经常被问到的话题，关于Unity中Update的调用。小标题中“N call 1 VS 1 call N”的意思是：N个带有Update的脚本各调用一次 VS 在一个Update里面调用N次自己写的用于更新的UpdateMe方法。
 
 Unity Blog中有一篇详细讲述这个问题的文章：[10000 Update() calls](https://blogs.unity3d.com/cn/2015/12/23/1k-update-calls/)  
 网上有网友进行过翻译，我参考的是这个帖子：[Unity3d 10000 Update() calls 性能优化](https://blog.csdn.net/huutu/article/details/50522585)
@@ -36,10 +36,10 @@ Unity在每次需要调用魔法方法的时候并不是使用System.Reflection�
 根据Unity Blog文中的实验数据表明，每次执行Update方法都是有成本消耗的，具体的消耗在哪？  
 
 Unity为了防止游戏出错或崩溃，做了很多了不起的事情：  
-判断脚本挂载的GameObject是否已经被激活？  
-它是否在Update循环中被销毁？  
-脚本中是否存在Update方法？  
-怎么处理这个Update循环中创建的MonoBehaviour？  
+> 判断脚本挂载的GameObject是否已经被激活？  
+> 它是否在Update循环中被销毁？  
+> 脚本中是否存在Update方法？  
+> 怎么处理这个Update循环中创建的MonoBehaviour？  
 等等一系列问题，然而我们自己写的Manager脚本中并没有处理这些判断，仅仅是循环迭代了一堆对象，调用了他们的UpdateMe之类的方法而已。
 
 ---
