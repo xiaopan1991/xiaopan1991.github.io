@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Unity游戏开发---Update的10000次调用"
-subtitle:   " \"N call 1 VS 1 call N""
+subtitle:   " \"N call 1 VS 1 call N. \""
 date:       2018-03-29
 author:     "xiaopan"
 header-img: "img/home-bg.jpg"
