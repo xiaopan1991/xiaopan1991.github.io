@@ -36,10 +36,11 @@ Unity在每次需要调用魔法方法的时候并不是使用System.Reflection�
 根据Unity Blog文中的实验数据表明，每次执行Update方法都是有成本消耗的，具体的消耗在哪？  
 
 Unity为了防止游戏出错或崩溃，做了很多了不起的事情：  
-> 判断脚本挂载的GameObject是否已经被激活？  
-> 它是否在Update循环中被销毁？  
-> 脚本中是否存在Update方法？  
-> 怎么处理这个Update循环中创建的MonoBehaviour？  
+> 1.判断脚本挂载的GameObject是否已经被激活？  
+> 2.它是否在Update循环中被销毁？  
+> 3.脚本中是否存在Update方法？  
+> 4.怎么处理这个Update循环中创建的MonoBehaviour？  
+
 等等一系列问题，然而我们自己写的Manager脚本中并没有处理这些判断，仅仅是循环迭代了一堆对象，调用了他们的UpdateMe之类的方法而已。
 
 ---
